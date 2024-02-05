@@ -9,7 +9,7 @@ TeamTaskTracker is a simple yet powerful task management system designed for sma
 ![Display Status](images/Screenshot_ds.png)
 ![Display Status](images/Screenshot_options.png)
 ![Display Status](images/Screenshot_txt.png)
-![Display Status](/Screenshot_va.png)
+![Display Status](../Screenshot_va.png)
 
 ## Installation
 
