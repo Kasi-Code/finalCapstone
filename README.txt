@@ -6,10 +6,10 @@ TeamTaskTracker is a simple yet powerful task management system designed for sma
 
 ## Table of Contents
 
-![Display Status](https://github.com/Kasi-Code/finalCapstone/blob/master/images/Screenshot_ds.png)
-![Display Status](/images/Screenshot_options.png)
-![Display Status](/images/Screenshot_txt.png)
-![Display Status](/images/Screenshot_va.png)
+![Display Status](images/Screenshot_ds.png)
+![Display Status](images/Screenshot_options.png)
+![Display Status](images/Screenshot_txt.png)
+![Display Status](/Screenshot_va.png)
 
 ## Installation
 
