@@ -471,11 +471,6 @@ while True:
 
             task_list.append(curr_t)
 
-        curr_user_num_task = 0
-        for user in task_list:
-            if curr_user == user["username"]:
-                curr_user_num_task += 1
-
         curr_date = date.today()
 
         # For user_overview
@@ -505,26 +500,14 @@ while True:
             if not v["completed"] and curr_date > due_date:
                 uncompleted_and_overdue += 1
 
-            if curr_user == v["username"] and v['title']:
-                num_tasks_assigned_to_user += 1
-
-            if curr_user == v["username"] and v["title"] and v["completed"]:
-              num_tasks_completed_by_user += 1
-
       # For user_overview
         num_users = len(username_password.keys())
         percent_of_incomplete = (num_tasks_incomplete / num_tasks) * 100 
         percent_of_overdue = (overdue_tasks / num_tasks) * 100 
 
-        # For user_overview
-        if curr_user_num_task < 1:
-            percentage_task_for_user = 0 
-            percentage_completed_task_by_user = 0
-            percentage_completed_task_by_user = 0 
-        else:
-            percentage_task_for_user = (num_tasks_assigned_to_user / num_tasks) * 100 
-            percentage_completed_task_by_user = 0
-            percentage_completed_task_by_user = (num_tasks_completed_by_user / num_tasks_assigned_to_user) * 100 
+        split_name_str = [n.replace(";", " ") for n in user_data]
+        username_and_pass = [n.split(";") for n in user_data]
+        username_only = [n[0] for n in username_and_pass]
 
         task_overview_file = open("task_overview.txt", "w+")
         task_overview_file.write(f"""The Overview Report For Task: -
@@ -540,22 +523,45 @@ while True:
 
         task_overview_file.close()
 
-        user_overview_file = open("user_overview.txt", "w+")
-        user_overview_file.write(f"""The Overview Report For {curr_user}: -
+        # For user_overview
+        # Open the file outside the loop in append mode ("a+") instead of write mode ("w+")
+        with open("user_overview.txt", "w+") as user_overview_file:
+            for username in username_only:
+                num_tasks_assigned_to_user = 0
+                num_tasks_incomplete_by_user = 0
+                num_tasks_completed_by_user = 0
+                for task in task_list:
+                    if username == task["username"]:
+                        num_tasks_assigned_to_user += 1
+                        if not task["completed"]:
+                            num_tasks_incomplete_by_user += 1
+                        if task["completed"]:
+                            num_tasks_completed_by_user += 1
 
-- {num_tasks_assigned_to_user} task(s) assigned to you in total.
-- {round(percentage_task_for_user)}% of the task(s) assigned to you in total.
-- {round(percentage_completed_task_by_user)}% of the task(s) you completed in total.
+                if num_tasks_assigned_to_user < 1:
+                    percentage_task_for_user = 0
+                    percentage_completed_task_by_user = 0
+                else:
+                    percentage_task_for_user = (num_tasks_assigned_to_user / len(task_list)) * 100
+                    percentage_completed_task_by_user = (num_tasks_completed_by_user / num_tasks_assigned_to_user) * 100
 
+                # Write to the file
+                user_overview_file.write(f"""The Overview Report For {username}: 
+    - {num_tasks_assigned_to_user} task(s) assigned to you in total.
+    - {round(percentage_task_for_user)}% of the task(s) assigned to you in total.
+    - {round(percentage_completed_task_by_user)}% of the task(s) you completed in total.\n\n""")
+
+            user_overview_file.write(f"""
 There are {num_users} user(s) registered in total.
 
-(Printed {curr_date})""")
+(Printed {curr_date})\n""")
 
         user_overview_file.close()
 
+        # You can print the generated reports outside the loop
         print(
             """<< >> Generated reports << >> 
-            
+
 Please find the files for
 'user_overview' and 'task_overview' 
 in the main folder."""

@@ -1,9 +1,39 @@
-The Overview Report For Admin: -
+The Overview Report For Admin: 
+    - 3 task(s) assigned to you in total.
+    - 20% of the task(s) assigned to you in total.
+    - 100% of the task(s) you completed in total.
 
-- 3 task(s) assigned to you in total.
-- 20% of the task(s) assigned to you in total.
-- 100% of the task(s) you completed in total.
+The Overview Report For Kasi: 
+    - 6 task(s) assigned to you in total.
+    - 40% of the task(s) assigned to you in total.
+    - 67% of the task(s) you completed in total.
+
+The Overview Report For Ka: 
+    - 1 task(s) assigned to you in total.
+    - 7% of the task(s) assigned to you in total.
+    - 0% of the task(s) you completed in total.
+
+The Overview Report For Helen: 
+    - 2 task(s) assigned to you in total.
+    - 13% of the task(s) assigned to you in total.
+    - 0% of the task(s) you completed in total.
+
+The Overview Report For Brithney: 
+    - 0 task(s) assigned to you in total.
+    - 0% of the task(s) assigned to you in total.
+    - 0% of the task(s) you completed in total.
+
+The Overview Report For Ayumi: 
+    - 2 task(s) assigned to you in total.
+    - 13% of the task(s) assigned to you in total.
+    - 0% of the task(s) you completed in total.
+
+The Overview Report For K: 
+    - 1 task(s) assigned to you in total.
+    - 7% of the task(s) assigned to you in total.
+    - 0% of the task(s) you completed in total.
+
 
 There are 7 user(s) registered in total.
 
-(Printed 2024-02-05)
+(Printed 2024-02-16)
