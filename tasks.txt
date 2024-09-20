@@ -11,5 +11,5 @@ Admin;Are all tasks completed?;Check status.;1989-01-02;2023-12-19;Yes
 Ka;Have you clean your room?;Hoover and dust.;2012-01-01;2024-01-01;No
 Helen;Have you done anything good towards others?;For sanity.;2024-01-05;2024-01-03;No
 Ayumi;Have you listen to you fav song?;How many?;1999-03-05;2024-01-03;No
-Kasi;Finish CoGramma Corse.;Need to graduate.;2024-04-24;2024-01-04;No
+Kasi;Finish CoGramma Corse.;Need to graduate.;2024-04-24;2024-01-04;Yes
 Ayumi;Sooth the mood for relaxation.;Destress.;2025-04-18;2024-01-04;No
