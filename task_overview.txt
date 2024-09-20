@@ -1,10 +1,10 @@
 The Overview Report For Task: -
 
-- 15 task(s) generated in total.
-- 7 task(s) completed in total.
-- 8 task(s) uncompleted in total.
-- 6 task(s) uncompleted and overdue in total.
-- 53% incomplete task(s) in total.
-- 80% overdue task(s) in total.
+- 15 tasks generated in total.
+- 7 tasks completed in total.
+- 8 tasks uncompleted in total.
+- 6 tasks uncompleted and overdue in total.
+- 53% incomplete tasks in total.
+- 80% overdue tasks in total.
 
 (Printed 2024-09-20)

@@ -510,14 +510,17 @@ while True:
         username_only = [n[0] for n in username_and_pass]
 
         task_overview_file = open("task_overview.txt", "w+")
+
+        task_linguistic_terms = "tasks" if num_tasks > 1 else "task"
+
         task_overview_file.write(f"""The Overview Report For Task: -
 
-- {num_tasks} task(s) generated in total.
-- {num_tasks_completed} task(s) completed in total.
-- {num_tasks_incomplete} task(s) uncompleted in total.
-- {uncompleted_and_overdue} task(s) uncompleted and overdue in total.
-- {round(percent_of_incomplete)}% incomplete task(s) in total.
-- {round(percent_of_overdue)}% overdue task(s) in total.
+- {num_tasks} {task_linguistic_terms} generated in total.
+- {num_tasks_completed} {task_linguistic_terms} completed in total.
+- {num_tasks_incomplete} {task_linguistic_terms} uncompleted in total.
+- {uncompleted_and_overdue} {task_linguistic_terms} uncompleted and overdue in total.
+- {round(percent_of_incomplete)}% incomplete {task_linguistic_terms} in total.
+- {round(percent_of_overdue)}% overdue {task_linguistic_terms} in total.
 
 (Printed {curr_date})""")
 
@@ -542,17 +545,25 @@ while True:
                     percentage_task_for_user = 0
                     percentage_completed_task_by_user = 0
                 else:
-                    percentage_task_for_user = (num_tasks_assigned_to_user / len(task_list)) * 100
-                    percentage_completed_task_by_user = (num_tasks_completed_by_user / num_tasks_assigned_to_user) * 100
+                    percentage_task_for_user = (
+                        num_tasks_assigned_to_user 
+                        / len(task_list)) * 100
+                    percentage_completed_task_by_user = (
+                        num_tasks_completed_by_user 
+                        / num_tasks_assigned_to_user) * 100
+                    
+                task_linguistic_terms = "tasks" if num_tasks_assigned_to_user > 1 else "task"
 
                 # Write to the file
                 user_overview_file.write(f"""The Overview Report For {username}: 
-    - {num_tasks_assigned_to_user} task(s) assigned to you in total.
-    - {round(percentage_task_for_user)}% of the task(s) assigned to you in total.
-    - {round(percentage_completed_task_by_user)}% of the task(s) you completed in total.\n\n""")
+    - {num_tasks_assigned_to_user} {task_linguistic_terms} assigned to you in total.
+    - {round(percentage_task_for_user)}% of the {task_linguistic_terms} assigned to you in total.
+    - {round(percentage_completed_task_by_user)}% of the {task_linguistic_terms} you completed in total.\n\n""")
+                
+            user_linguistic_terms = f"are {num_users} users" if num_users > 1 else f"is {num_users} user"
 
             user_overview_file.write(f"""
-There are {num_users} user(s) registered in total.
+There {user_linguistic_terms} registered in total.
 
 (Printed {curr_date})\n""")
 
