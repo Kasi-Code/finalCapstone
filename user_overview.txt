@@ -33,7 +33,12 @@ The Overview Report For K:
     - 0% of the task assigned to you in total.
     - 0% of the task you completed in total.
 
+The Overview Report For Secret a01: 
+    - 0 task assigned to you in total.
+    - 0% of the task assigned to you in total.
+    - 0% of the task you completed in total.
 
-There are 7 users registered in total.
 
-(Printed 2024-09-20)
+There are 8 users registered in total.
+
+(Printed 2025-11-07)
