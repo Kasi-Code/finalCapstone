@@ -1,11 +1,11 @@
 Helen;Add functionality to task manager.;Add additional options and refactor the code.;2022-12-01;2022-11-22;No
-Kasi;Testing new feature for editing;title & description - does it work?;2013-12-12;2023-12-12;No
+Kasi;Testing new feature for editing;title & description - does it work?;2013-12-12;2023-12-12;Yes
 Kasi;Need to move on to T18.;Don't delay.;2023-12-13;2023-12-12;No
 Admin;Test test.; For testing.;2023-12-12;2023-12-12;Yes
 Kasi;Guided Learning Hours (GLH) must be 115.;You should do this before 24/4/24.;2024-03-12;2023-12-12;Yes
 Kasi;Complete CV.;Do it later.;2030-12-01;2023-12-15;Yes
 Kasi;Setup Linkin.;When all tasks are done.;2012-11-03;2023-12-15;Yes
-Kasi;Have you submitted all the tasks?;You'll be fine.;2029-01-24;2023-12-15;No
+Kasi;Queen Kasie;Slay slay! 👸;2029-01-24;2023-12-15;Yes
 Admin;Listen to music helps you.;Music keeps you inspired.;2000-01-01;2023-12-19;Yes
 Admin;Are all tasks completed?;Check status.;1989-01-02;2023-12-19;Yes
 Ka;Have you clean your room?;Hoover and dust.;2012-01-01;2024-01-01;No
@@ -13,5 +13,5 @@ Helen;Have you done anything good towards others?;For sanity.;2024-01-05;2024-01
 Ayumi;Have you listen to you fav song?;How many?;1999-03-05;2024-01-03;No
 Kasi;Finish CoGramma Corse.;Need to graduate.;2024-04-24;2024-01-04;Yes
 Ayumi;Sooth the mood for relaxation.;Destress.;2025-04-18;2024-01-04;No
-Secret a01;Add new feature to task;Allow user to edit tittle & description. (Getting back to coding, start off with this to get to muscle going.);2025-11-10;2025-11-07;No
+Secret a01;Add new feature to task;Allow user to edit tittle & description. (Getting back to coding, start off with this to get to muscle going.);2025-11-10;2025-11-07;Yes
 Secret a01;Better way to select the team;Instead of typing in name, the list with index number should be shown and select the number to assign the team - easier for user. ;2025-11-10;2025-11-07;No

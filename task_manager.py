@@ -573,7 +573,16 @@ while True:
 
         task_linguistic_terms = "tasks" if num_tasks > 1 else "task"
 
-        task_overview_file.write(f"""The Overview Report For Task: -
+        overall_performance = ""
+
+        if percent_of_incomplete >= 50 and percent_of_overdue >= 50:
+            overall_performance = "Poor performance! Immediate action required! 🚨"
+        elif percent_of_incomplete >= 50 or percent_of_overdue >= 50:
+            overall_performance = "Average performance! Room for improvement! ⚠️"
+        else:
+            overall_performance = "Excellent performance! Keep it up! 🌟"
+
+        task_overview_file.write(f"""The Overview Report For Task: - {overall_performance}
 
 - {num_tasks} {task_linguistic_terms} generated in total.
 - {num_tasks_completed} {task_linguistic_terms} completed in total.
@@ -614,11 +623,22 @@ while True:
                     
                 task_linguistic_terms = "tasks" if num_tasks_assigned_to_user > 1 else "task"
 
+                unmarried_boss_decision = ""
+                
+                if num_tasks_assigned_to_user > 0 and percentage_completed_task_by_user == 0:
+                    unmarried_boss_decision = "You're fired! Where's my HR? 🔥"
+                elif num_tasks_assigned_to_user == 0:
+                    unmarried_boss_decision = "Bloody intern. 🥱"
+                elif 0 < percentage_completed_task_by_user < 100:
+                    unmarried_boss_decision = "An invitation to the office.🍵" 
+                else:   
+                    unmarried_boss_decision = "Keep it up! Pay rises pending... 🤑" 
+
                 # Write to the file
-                user_overview_file.write(f"""The Overview Report For {username}: 
-    - {num_tasks_assigned_to_user} {task_linguistic_terms} assigned to you in total.
-    - {round(percentage_task_for_user)}% of the {task_linguistic_terms} assigned to you in total.
-    - {round(percentage_completed_task_by_user)}% of the {task_linguistic_terms} you completed in total.\n\n""")
+                user_overview_file.write(f"""The Overview Report For {username}: {unmarried_boss_decision}
+    - {num_tasks_assigned_to_user} {task_linguistic_terms} assigned in total.
+    - {round(percentage_task_for_user)}% of the {task_linguistic_terms} assigned in total.
+    - {round(percentage_completed_task_by_user)}% of the {task_linguistic_terms} completed in total.\n\n""")
                 
             user_linguistic_terms = f"are {num_users} users" if num_users > 1 else f"is {num_users} user"
 
