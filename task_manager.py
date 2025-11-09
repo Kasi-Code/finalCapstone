@@ -333,6 +333,7 @@ while True:
         -1 - Return to the main menu
         at - Assign task to different user
         dd - Change the due date
+        td - Edit Title & Description
         : ''').lower()
 
                     if selected_edit_option == "-1":
@@ -421,6 +422,65 @@ while True:
                                 print(
                                     f"\nTask {task_num} due date" 
                                     f"chnaged to {new_due_date}.")
+                                break
+                        else:
+                            # The 'else' block will only be executed if the 'for' 
+                            # loop completes without encountering a 'break'
+                            print(f"Task {task_num} not found.")
+
+                        # After processing the changes, write the updated list 
+                        # back to the tasks.txt file
+                        with open("tasks.txt", "w") as task_file:
+                            for t in task_list_txt:
+                                task_file.write(
+                                    f"{t['username']};{t['title']};{t['description']};"
+                                    f"{t['due_date']};{t['assigned_date']};"
+                                    f"{'Yes' if t['completed'] else 'No'}\n"
+                                )
+
+                        # Refresh curr_user_task_list after marking a task as complete
+                        task_list = [t for t in task_list_txt if t['username'] == curr_user]
+                        num_of_index = [i for i in range(1, len(curr_user_task_list) + 1)]
+                        # break
+                    
+                    elif selected_edit_option == "td":   
+                        new_title = ""
+                        new_description = ""
+                        print("\nWhich task would you like to edit the Title & Description?")
+
+                        task_num = selecting_task_num(num_of_index)
+                        if task_num is False:
+                            selected_task = False
+                        else:                              
+                            selected_task = curr_user_task_list[task_num - 1]
+                            if selected_task["completed"]:                              
+                              print(f"Can't edit task {task_num} because it's already completed.")
+                              selected_task = False
+                            else:
+                              selected_task = curr_user_task_list[task_num - 1]
+
+                              while True:
+                                try:
+                                    new_title = input(f"Enter the new title for task {task_num}: ")
+                                    new_description = input(f"\nEnter the new description for task {task_num}: ")
+                                    break
+                                  
+                                except ValueError:
+                                    print("Invalid datetime format. Please use the format specified")
+
+                        for t in task_list_txt:
+                            if selected_task is False:
+                                break
+                            elif (
+                                selected_task["username"] == t["username"] 
+                                and selected_task["title"] == t["title"]
+                            ):
+                                t["title"] = new_title    
+                                t["description"] = new_description                               
+                                print(
+                                    f"\nTask {task_num} Title & Description" 
+                                    f"changed to Title:{new_title}."
+                                    f"changed to Description:{new_description}.")
                                 break
                         else:
                             # The 'else' block will only be executed if the 'for' 
